@@ -1,2 +1,3 @@
 ---
-baz:fax
+  vars;
+    app2_url:"http://fobar"

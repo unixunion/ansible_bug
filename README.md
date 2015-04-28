@@ -1,5 +1,18 @@
 # ansible_bug
 
+A demonstration of issue when using include_vars: and a strange exception. Usimg Amazon ec2.py as inventory!
+
+1. If you delete app2.yml the code works
+2. WORKS if you copy app1.yml to app2.yml ( identitical content )
+3. BREAKS if you change app1.yml->app1_url:foobar ( remote http:// )
+3. BREAKS if you change contents of app2.yml to
+
+```
+---
+  vars;
+    app2_url:"fobar"
+```
+
 ansible-playbook -i testing app.yml -e name=myenvironment -e version=1.0.0-1 -e app_name=app1 -vvv
 
 ```

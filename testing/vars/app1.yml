@@ -1,2 +1,3 @@
 ---
-foo:bar
+  vars;
+    app1_url:"http://fobar"
