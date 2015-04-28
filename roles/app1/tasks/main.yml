@@ -1,0 +1,6 @@
+  # include the config loader
+  - include: ../../../tasks/config_loader.yml
+
+  # print out the configuration url
+  - name: configure app1
+    debug: var="{{ app1_url }}"

@@ -1,0 +1,9 @@
+---
+# simple configuration loader, highest prio on top!
+  - include_vars: "{{ item }}"
+    with_first_found:
+      - files:
+        - "{{ app_name }}.yml"
+        - "{{ name }}.yml"
+        paths:
+          - "../{{ env_name }}/vars/"

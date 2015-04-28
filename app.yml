@@ -1,0 +1,17 @@
+# ansible-playbook -i preproduction ec2_app.yml -e name=customer -e version=1.0.0-1 -e app_name=casservice -vvv
+---
+- name: execute role
+
+  vars:
+    env_name: testing
+    name: service
+    version: 1.0.0-1
+    app_name: app1
+
+  gather_facts: True
+  hosts: all
+  user: admin
+
+  roles:
+    - { role: "{{app_name}}", when: ec2_tag_App == app_name }
+
