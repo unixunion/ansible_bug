@@ -13,6 +13,15 @@ A demonstration of issue when using include_vars: and a strange exception. Usimg
     app2_url:"fobar"
 ```
 
+## Env
+
+```
+export AWS_ACCESS_KEY_ID='KEY'
+export AWS_SECRET_ACCESS_KEY='SECRET'
+export EC2_INI_PATH=/etc/ansible/ec2.ini
+source ~/py27/bin/activate
+```
+
 ansible-playbook -i testing app.yml -e name=myenvironment -e version=1.0.0-1 -e app_name=app1 -vvv
 
 ```
